@@ -1,27 +1,9 @@
-# CatApiAngular
+👩🏻‍💻 Per vedere il sito --> https://angular-cat-api.vercel.app/home
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+🔥Realizzato usando Typescript, Angular, Angular Material e cat API .
 
-## Development server
+💻 Compito Challenge: Creazione di due componenti, home e card. In home si scrive in un input text il nostro nome e nome da dare al Gatto, si sceglie la razza selezionandola nel select (razze caricate tramite API). In card avremo la card del gatto con i primi dati citati più, grazie all'API, origine gatto, descrizione, valutazione di Intelligence, Affection,Stranger friendly e Dog friendly che avranno un voto su /5. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Tecnologie Usate: HTML, CSS, Typescript, Angular, Angular Material, API
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![angularjs](https://github.com/LauraSaporoso/Quiz-app/assets/58106756/f89fc96d-cd3d-41d4-81aa-605df0255cbc)
