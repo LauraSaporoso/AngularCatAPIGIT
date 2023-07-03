@@ -1,41 +1,48 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Cat } from '../models/cat.model';
+import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ServiceService {
-  public catCard!: Cat;
+  // Oggetto di tipo Cat accessibile da ogni componente a patto che utilizzino il service
+  public catCard$: BehaviorSubject<Cat> = new BehaviorSubject<Cat>({} as Cat);
   constructor(private http: HttpClient) {}
 
-  // per passare valori
+  //Aggiorno la carta coi dati dell'input
+  // dal breed detail andrò a prendere solo i dati che mi interessano
+
   updateCat(owName: string, cName: string, breedDetail: any) {
-    this.catCard = {
+    console.log(breedDetail);
+    const catCard: Cat = {
       ownerName: owName,
       catName: cName,
       breed: breedDetail.name,
-      origin: breedDetail.origin,
-      description: breedDetail.description,
       imgId: breedDetail.reference_image_id,
+      description: breedDetail.description,
       intelligence: breedDetail.intelligence,
       affection_level: breedDetail.affection_level,
+      origin: breedDetail.origin,
       stranger_friendly: breedDetail.stranger_friendly,
       dog_friendly: breedDetail.dog_friendly,
     };
 
-    console.log(this.catCard);
+    this.catCard$.next(catCard);
+    console.log(this.catCard$.value.imgId);
   }
 
-  // API breeds
-  getBreedDetails() {
-    const urlBreedDetails = `https://api.thecatapi.com/v1/breeds`;
-    return this.http.get<any[]>(urlBreedDetails);
+  //get della lista di breeds con tutte le sue proprietà
+
+  getBreedCategories(): Observable<any> {
+    const urlBreedCategories = `https://api.thecatapi.com/v1/breeds`;
+    return this.http.get<any[]>(urlBreedCategories);
   }
 
-  // API Img con imgId
-  getImage() {
-    const urlImage = `https://api.thecatapi.com/v1/images/${this.catCard.imgId}`;
-    return this.http.get<any>(urlImage);
+  //get dell'image tramite catCard.imgID
+  getImage(): Observable<any> {
+    const imageUrl = `https://api.thecatapi.com/v1/images/${this.catCard$.value.imgId}`;
+    return this.http.get<any>(imageUrl);
   }
 }
