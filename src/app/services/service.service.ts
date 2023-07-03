@@ -29,7 +29,7 @@ export class ServiceService {
 
   // API breeds
   getBreedDetails() {
-    const urlBreedDetails = `http://api.thecatapi.com/v1/breeds`;
+    const urlBreedDetails = `https://api.thecatapi.com/v1/breeds`;
     return this.http.get<any[]>(urlBreedDetails);
   }
 
