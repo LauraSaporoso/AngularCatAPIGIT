@@ -1,5 +1,7 @@
 👩🏻‍💻 Per vedere il sito --> https://angular-cat-api.vercel.app/home
 
+👥 Progetto in team --> stefandayy 🤝
+
 🔥Realizzato usando Typescript, Angular, Angular Material e cat API .
 
 💻 Challenge: Creazione di due componenti, home e card. In home si scrive in un input text il nostro nome e nome da dare al Gatto, si sceglie la razza selezionandola nel select (razze caricate tramite API). In card avremo la card del gatto con i primi dati citati più, grazie all'API, origine gatto, descrizione, valutazione di Intelligence, Affection,Stranger friendly e Dog friendly che avranno un voto su /5. 
