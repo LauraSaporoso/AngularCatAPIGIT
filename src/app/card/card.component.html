@@ -1,0 +1,47 @@
+<!-- {{ getCatCard.ownerName }}
+{{ getCatCard.catName }}
+{{ getCatCard.breed }}
+{{ getCatCard.origin }}
+{{ getCatCard.description }}
+<img width="200px" [src]="urlImg" /> -->
+
+<mat-card class="example-card" *ngIf="getCatCard">
+  <mat-card-header>
+    <mat-card-title>{{ getCatCard.ownerName }}'s cat</mat-card-title>
+  </mat-card-header>
+
+  <img [src]="urlImg" />
+
+  <mat-card-content>
+    <mat-card-title-group class="centered-content">
+      <mat-card-subtitle
+        ><span class="bold-element">Name: </span> {{ getCatCard.catName }}
+      </mat-card-subtitle>
+      <mat-card-subtitle
+        ><span class="bold-element">Breed: </span> {{ getCatCard.breed }}
+      </mat-card-subtitle>
+      <mat-card-subtitle
+        ><span class="bold-element">Origin: </span> {{ getCatCard.origin }}
+      </mat-card-subtitle>
+
+      <mat-card-subtitle class="description">
+        <span class="bold-element">Description: </span>
+        {{ getCatCard.description }}
+      </mat-card-subtitle>
+      <mat-card-subtitle
+        >Intelligence: {{ getCatCard.intelligence }}/5
+      </mat-card-subtitle>
+      <mat-card-subtitle
+        >Affection: {{ getCatCard.affection_level }}/5
+      </mat-card-subtitle>
+      <mat-card-subtitle
+        >Stranger friendly: {{ getCatCard.stranger_friendly }}/5
+      </mat-card-subtitle>
+      <mat-card-subtitle
+        >Dog friendly: {{ getCatCard.dog_friendly }}/5
+      </mat-card-subtitle>
+    </mat-card-title-group>
+  </mat-card-content>
+</mat-card>
+
+<button mat-raised-button color="warn" (click)="goBack()">Back</button>

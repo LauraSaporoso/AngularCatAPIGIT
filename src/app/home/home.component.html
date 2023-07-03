@@ -1,0 +1,44 @@
+<div class="input-container">
+  <mat-form-field>
+    <mat-label for="Ownername">Owner's name</mat-label>
+    <input
+      matInput
+      [(ngModel)]="ownerName"
+      name="ownerName"
+      id="Ownername"
+      required
+      maxlength="10"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label for="catName">Cat Name</mat-label>
+    <input
+      matInput
+      [(ngModel)]="catName"
+      name="catName"
+      id="catName"
+      required
+      maxlength="20"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Select the Breed</mat-label>
+    <mat-select [(ngModel)]="breedChoosed" required>
+      <mat-option *ngFor="let breed of breedList" [value]="breed">{{
+        breed.name
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<button
+  mat-raised-button
+  color="primary"
+  [disabled]="!(ownerName && catName && breedChoosed)"
+  (click)="getDatas()"
+  routerLink="/card"
+>
+  click
+</button>
