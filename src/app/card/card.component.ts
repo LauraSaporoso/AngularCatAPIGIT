@@ -33,7 +33,7 @@ export class CardComponent implements OnInit, OnDestroy {
       .subscribe();
   }
 
-  get getCatCard() {
+  get catCard$() {
     return this.varService.catCard$.value;
   }
   goBack() {

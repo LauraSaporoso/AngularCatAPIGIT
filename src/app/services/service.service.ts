@@ -8,13 +8,15 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class ServiceService {
   // Oggetto di tipo Cat accessibile da ogni componente a patto che utilizzino il service
-  public catCard$: BehaviorSubject<Cat> = new BehaviorSubject<Cat>({} as Cat);
+  private catCard: BehaviorSubject<Cat> = new BehaviorSubject<Cat>({} as Cat);
+  public catCard$ = this.catCard;
+
   constructor(private http: HttpClient) {}
 
   //Aggiorno la carta coi dati dell'input
   // dal breed detail andrò a prendere solo i dati che mi interessano
 
-  updateCat(owName: string, cName: string, breedDetail: any) {
+  updateCat(owName: string, cName: string, breedDetail: any): void {
     console.log(breedDetail);
     const catCard: Cat = {
       ownerName: owName,
@@ -29,8 +31,8 @@ export class ServiceService {
       dog_friendly: breedDetail.dog_friendly,
     };
 
-    this.catCard$.next(catCard);
-    console.log(this.catCard$.value.imgId);
+    this.catCard.next(catCard);
+    console.log(this.catCard.value.imgId);
   }
 
   //get della lista di breeds con tutte le sue proprietà
@@ -42,7 +44,7 @@ export class ServiceService {
 
   //get dell'image tramite catCard.imgID
   getImage(): Observable<any> {
-    const imageUrl = `https://api.thecatapi.com/v1/images/${this.catCard$.value.imgId}`;
+    const imageUrl = `https://api.thecatapi.com/v1/images/${this.catCard.value.imgId}`;
     return this.http.get<any>(imageUrl);
   }
 }

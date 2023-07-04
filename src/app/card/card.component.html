@@ -1,13 +1,13 @@
-<!-- {{ getCatCard.ownerName }}
-{{ getCatCard.catName }}
-{{ getCatCard.breed }}
-{{ getCatCard.origin }}
-{{ getCatCard.description }}
+<!-- {{ catCard$.ownerName }}
+{{ catCard$.catName }}
+{{ catCard$.breed }}
+{{ catCard$.origin }}
+{{ catCard$.description }}
 <img width="200px" [src]="urlImg" /> -->
 
-<mat-card class="example-card" *ngIf="getCatCard">
+<mat-card class="example-card" *ngIf="catCard$">
   <mat-card-header>
-    <mat-card-title>{{ getCatCard.ownerName }}'s cat</mat-card-title>
+    <mat-card-title>{{ catCard$.ownerName }}'s cat</mat-card-title>
   </mat-card-header>
 
   <img [src]="urlImg" />
@@ -15,31 +15,31 @@
   <mat-card-content>
     <mat-card-title-group class="centered-content">
       <mat-card-subtitle
-        ><span class="bold-element">Name: </span> {{ getCatCard.catName }}
+        ><span class="bold-element">Name: </span> {{ catCard$.catName }}
       </mat-card-subtitle>
       <mat-card-subtitle
-        ><span class="bold-element">Breed: </span> {{ getCatCard.breed }}
+        ><span class="bold-element">Breed: </span> {{ catCard$.breed }}
       </mat-card-subtitle>
       <mat-card-subtitle
         ><span class="bold-element">Origin: </span>
-        {{ getCatCard.origin }}
+        {{ catCard$.origin }}
       </mat-card-subtitle>
 
       <mat-card-subtitle class="description">
         <span class="bold-element">Description: </span>
-        {{ getCatCard.description }}
+        {{ catCard$.description }}
       </mat-card-subtitle>
       <mat-card-subtitle
-        >Intelligence: {{ getCatCard.intelligence }}/5
+        >Intelligence: {{ catCard$.intelligence }}/5
       </mat-card-subtitle>
       <mat-card-subtitle
-        >Affection: {{ getCatCard.affection_level }}/5
+        >Affection: {{ catCard$.affection_level }}/5
       </mat-card-subtitle>
       <mat-card-subtitle
-        >Stranger friendly: {{ getCatCard.stranger_friendly }}/5
+        >Stranger friendly: {{ catCard$.stranger_friendly }}/5
       </mat-card-subtitle>
       <mat-card-subtitle
-        >Dog friendly: {{ getCatCard.dog_friendly }}/5
+        >Dog friendly: {{ catCard$.dog_friendly }}/5
       </mat-card-subtitle>
     </mat-card-title-group>
   </mat-card-content>
