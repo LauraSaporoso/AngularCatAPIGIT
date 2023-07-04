@@ -32,7 +32,6 @@ export class ServiceService {
     };
 
     this.catCard.next(catCard);
-    console.log(this.catCard.value.imgId);
   }
 
   //get della lista di breeds con tutte le sue proprietà
